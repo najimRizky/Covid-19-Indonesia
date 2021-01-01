@@ -34,9 +34,15 @@ function Home() {
         )
     }
 
+    function formatDate(num){
+        let tmp = num.toString()
+        if(tmp.length === 1) return '0'+tmp
+    }
+
     const getCurrDate = () =>{
         var today = new Date();
-        setCurrDate(today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate());
+        setCurrDate(today.getFullYear() + '-' + formatDate(today.getMonth() + 1) + '-' + formatDate(today.getDate()));
+        //console.log(today.getFullYear() + '-' + formatDate(today.getMonth() + 1) + '-' + formatDate(today.getDate()))
     }
 
     return (
