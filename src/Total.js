@@ -95,7 +95,6 @@ function HomeTotal() {
                         </div>
                     </Grid>
                 </Grid>
-                <p>"This website is still under development"</p>
             </>
             )
             :(  <>

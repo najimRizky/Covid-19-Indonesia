@@ -14,12 +14,12 @@ img{
   height: auto;
 }
 
-ul{
+.navigasi ul{
   display: flex;
   justify-content: space-around;
 }
 
-li{
+.navigasi li{
   margin: 0 20px;
   list-style: none;
   font-size: 20px;
