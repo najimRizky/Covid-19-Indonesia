@@ -12,7 +12,6 @@ function Nav() {
     return (
         <div className="navigasi">
             <div className="pageTitle">
-                <h3>Logo</h3>
                 <h2>Covid-19 Indonesia</h2>
             </div>
             <ul>

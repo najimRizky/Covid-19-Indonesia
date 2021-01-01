@@ -9,6 +9,11 @@
   color: white;
 }
 
+img{
+  width: 50%;
+  height: auto;
+}
+
 ul{
   display: flex;
   justify-content: space-around;
@@ -24,4 +29,53 @@ li{
   display: flex;
   text-align: left;
   width: 30%;
+}
+
+.containerUtama h2{
+  font-weight: normal;
+  padding-top: 20px;
+  margin-bottom: -20px;
+  
+}
+.containerUtama h3{
+  padding-bottom: 20px;
+  
+}
+.containerUtama h2, .containerUtama h3{
+  color: white
+}
+
+.totalKasus{
+  background-image: linear-gradient(45deg,rgb(209, 94, 0),rgb(255, 179, 93));
+  margin: 0 10px;
+
+}
+
+.totalSembuh{
+  background-image: linear-gradient(45deg,rgb(27, 117, 39),rgb(39, 240, 89));
+  margin: 0 10px;
+}
+
+.totalMeninggal{
+  background-image: linear-gradient(45deg,rgb(139, 0, 0),rgb(255, 62, 62));
+  margin: 0 10px;
+}
+
+.judulHome{
+  margin-bottom: -18px;
+}
+
+.kasusBaru{
+  margin-top: -19px;
+  color: rgb(209, 94, 0)
+}
+
+.meninggalBaru{
+  margin-top: -19px;
+  color: rgb(190, 0, 0)
+}
+
+.sembuhBaru{
+  margin-top: -19px;
+  color: rgb(0, 161, 22)
 }
