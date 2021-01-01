@@ -15,6 +15,7 @@ function Home() {
     useEffect(() => {
         fetchItems();
         getCurrDate();
+        // eslint-disable-next-line
     },[])
 
     const fetchItems = async () => {
@@ -42,7 +43,6 @@ function Home() {
     const getCurrDate = () =>{
         var today = new Date();
         setCurrDate(today.getFullYear() + '-' + formatDate(today.getMonth() + 1) + '-' + formatDate(today.getDate()));
-        //console.log(today.getFullYear() + '-' + formatDate(today.getMonth() + 1) + '-' + formatDate(today.getDate()))
     }
 
     return (
