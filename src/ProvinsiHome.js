@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import Icon from '@material-ui/core/Icon';
+import TesIcon from '@material-ui/icons/AssignmentReturned';
 
 
 function ProvinsiHome() {
@@ -71,14 +73,15 @@ function ProvinsiHome() {
     return (
         <div>
             {fetchStatus ? (
-            <>
+            <div>  
+                <p>Cari Berdasarkan Provinsi</p>
                 <Grid container justify="center" xs={12}>
                     <Grid item xs={12} md={6} align="center">
                         <Autocomplete
                             id="combo-box-demo"
                             options={item}
                             getOptionLabel={(option) => option.provinsi}
-                            style={{ width: 500, height: 100 }}
+                            style={{ width: 500}}
                             size="small"
                             onInputChange={(event, value) => showProv(value)}
                             renderInput={(params) => <TextField {...params} label="Pilih provinsi" variant="outlined" />}
@@ -88,10 +91,30 @@ function ProvinsiHome() {
                 { prov !== undefined ? (
                     <>
                         <h1>{prov.provinsi}</h1>
-                        <h2>Kasus {format(prov.kasus)}</h2>
-                        <h2>Sembuh {format(prov.sembuh)}</h2>
-                        <h2>Meninggal {format(prov.meninggal)}</h2>
-                        <p>Lihat Detail>></p>
+                        <Grid container justify="center">
+                            <Grid container xs={12} md={8} justify="center">
+                                <Grid item md={6} xs={12}>
+                                    <h2>Kasus</h2> 
+                                    {format(prov.kasus)}
+                                </Grid>
+                                <Grid item md={6} xs={12}>
+                                    <h2>Dirawat </h2>
+                                    {format(prov.dirawat)}
+                                </Grid>
+                                <Grid item md={6} xs={12}>
+                                    <h2>Sembuh </h2>
+                                    {format(prov.sembuh)}
+                                </Grid>
+                                <Grid item md={6} xs={12}>
+                                    <h2>Meninggal </h2>
+                                    {format(prov.meninggal)}
+                                </Grid>
+                                <Grid xs={12}>
+                                    <p> Lihat Detail </p>
+                                </Grid>
+                                <TesIcon></TesIcon>
+                            </Grid>
+                        </Grid>
                     </>
                     
                 ) : (
@@ -100,7 +123,7 @@ function ProvinsiHome() {
 
                 }
 
-            </>
+            </div>
             )
             :(  <>
                     <CircularProgress className="margin-top-20" />

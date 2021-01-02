@@ -7,7 +7,7 @@ function Home() {
     return (
         <div>
             <Total/>
-            <hr></hr>
+            <hr style={{marginTop: 20, marginBottom: 20}}></hr>
             <Provinsi/>
             <p>"This website is still under development"</p>
 
