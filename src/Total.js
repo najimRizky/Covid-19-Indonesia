@@ -51,7 +51,7 @@ function HomeTotal() {
                 <p>Last Updated: {item.penambahan.tanggal}</p>
                 <Grid container xs={12} justify="center" className="containerUtama">
                     <Grid xs={12} align="center">
-                        <Grid item xs={12} sm={3} >
+                        <Grid item xs={9} sm={3} >
                             <Paper className="totalKasus">
                                 <h2>Jumlah Kasus</h2> 
                                 <h3>{format(item.total.positif)}</h3>
@@ -66,7 +66,7 @@ function HomeTotal() {
                             </div>
                         </Grid>
                     </Grid>
-                    <Grid item xs={12} sm={3} >
+                    <Grid item xs={9} sm={3} >
                         <Paper className="totalSembuh">
                             <h2>Sembuh</h2>
                             <h3>{format(item.total.sembuh)}</h3>
@@ -80,7 +80,7 @@ function HomeTotal() {
                             )}
                         </div>
                     </Grid>
-                    <Grid item xs={12} sm={3} >
+                    <Grid item xs={9} sm={3} >
                         <Paper className="totalMeninggal">
                             <h2>Meninggal</h2>
                             <h3>{format(item.total.meninggal)}</h3>

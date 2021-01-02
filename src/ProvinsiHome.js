@@ -79,7 +79,7 @@ function ProvinsiHome() {
                             id="combo-box-demo"
                             options={item}
                             getOptionLabel={(option) => option.provinsi}
-                            style={{ width: 500}}
+                            style={{ width: 300}}
                             size="small"
                             onInputChange={(event, value) => showProv(value)}
                             renderInput={(params) => <TextField {...params} label="Pilih provinsi" variant="outlined" />}
