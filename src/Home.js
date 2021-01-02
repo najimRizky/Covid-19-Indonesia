@@ -9,7 +9,7 @@ function Home() {
             <Total/>
             <hr style={{marginTop: 20, marginBottom: 20}}></hr>
             <Provinsi/>
-            <p>"This website is still under development"</p>
+            <p>Nb: <i>Website ini masih dalam proses pengembangan</i></p>
 
         </div>
     );

@@ -4,8 +4,6 @@ import Grid from '@material-ui/core/Grid';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import Icon from '@material-ui/core/Icon';
-import TesIcon from '@material-ui/icons/AssignmentReturned';
 
 
 function ProvinsiHome() {
@@ -60,7 +58,7 @@ function ProvinsiHome() {
             for(let i=0;i<item.length; i++){
                 tmp2 = item[i].provinsi
                 if(lowerWord(tmp2) === lowerWord(tmp1)){
-                    console.log(item[i])
+                    //console.log(item[i])
                     setProv(item[i])
                     return
                     //setFetchStatusProv(true)
@@ -90,29 +88,28 @@ function ProvinsiHome() {
                 </Grid>
                 { prov !== undefined ? (
                     <>
-                        <h1>{prov.provinsi}</h1>
-                        <Grid container justify="center">
-                            <Grid container xs={12} md={8} justify="center">
-                                <Grid item md={6} xs={12}>
+                        <h2>{prov.provinsi}</h2>
+                        <Grid container justify="center" className="provinsiHome">
+                            <Grid container xs={12} md={6} justify="center">
+                                <Grid item md={6} xs={12} style={{color: "rgb(209, 94, 0)"}}>
                                     <h2>Kasus</h2> 
-                                    {format(prov.kasus)}
+                                    <h3>{format(prov.kasus)}</h3>
                                 </Grid>
-                                <Grid item md={6} xs={12}>
-                                    <h2>Dirawat </h2>
-                                    {format(prov.dirawat)}
+                                <Grid item md={6} xs={12} style={{color: "rgb(210, 183, 0 )"}}>
+                                    <h2>Dirawat</h2> 
+                                    <h3>{format(prov.dirawat)}</h3>
                                 </Grid>
-                                <Grid item md={6} xs={12}>
-                                    <h2>Sembuh </h2>
-                                    {format(prov.sembuh)}
+                                <Grid item md={6} xs={12} style={{color: "rgb(0, 161, 22)"}}>
+                                    <h2>Sembuh</h2> 
+                                    <h3>{format(prov.sembuh)}</h3>
                                 </Grid>
-                                <Grid item md={6} xs={12}>
-                                    <h2>Meninggal </h2>
-                                    {format(prov.meninggal)}
+                                <Grid item md={6} xs={12} style={{color: "rgb(190, 0, 0)"}}>
+                                    <h2>Meninggal</h2> 
+                                    <h3>{format(prov.meninggal)}</h3>
                                 </Grid>
                                 <Grid xs={12}>
                                     <p> Lihat Detail </p>
                                 </Grid>
-                                <TesIcon></TesIcon>
                             </Grid>
                         </Grid>
                     </>

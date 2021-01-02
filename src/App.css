@@ -17,13 +17,13 @@ img{
 
 .navigasi ul{
   display: flex;
-  justify-content: space-around;
 }
 
 .navigasi li{
   margin: 0 20px;
   list-style: none;
-  font-size: 20px;
+  font-size: 16px;
+  margin-top: 6px;
 }
 
 .pageTitle{
@@ -83,4 +83,8 @@ img{
 
 .margin-top-20{
   margin-top: 50px;
+}
+
+.provinsiHome h2{
+  margin-bottom: -10px;
 }

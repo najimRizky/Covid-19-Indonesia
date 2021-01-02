@@ -12,11 +12,11 @@ function Nav() {
     return (
         <div className="navigasi">
             <div className="pageTitle">
-                <h2>Covid-19 Indonesia</h2>
+                <h3>Covid-19 Indonesia</h3>
             </div>
             <ul>
                 <Link to="/" style={navstyle}>
-                    <li >Home</li>
+                    <li>Home</li>
                 </Link>
                 <Link style={navstyle} to="/about">
                     <li >About</li>
