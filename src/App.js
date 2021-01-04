@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css';
 import Nav from './Nav'
+import Footer from './Footer'
 import About from './About'
 import Provinsi from './Provinsi'
 import ProvDetail from './ProvDetail'
@@ -20,6 +21,7 @@ function App() {
           <Route path="/provinsi/:id" component={ProvDetail} />
         </Switch>
       </Router>
+        <Footer/>
     </div>
   );
 
