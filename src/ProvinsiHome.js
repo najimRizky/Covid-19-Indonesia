@@ -1,22 +1,20 @@
 import React, {useState, useEffect} from 'react'
 import Grid from '@material-ui/core/Grid';
-//import Paper from '@material-ui/core/Paper';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import Button from '@material-ui/core/Button';
+import {Link} from 'react-router-dom'
 
 
 function ProvinsiHome() {
     const [item, setItem] = useState([]);
     const [fetchStatus, setFetchStatus] = useState(false);
-    //const [fetchStatusProv, setFetchStatusProv] = useState(false);
     const [prov, setProv] = useState(undefined)
-    //const [currDate, setCurrDate] = useState('')
 
     useEffect(() => {
         fetchItems();
         showProv();
-        //getCurrDate();
         // eslint-disable-next-line
     },[])
 
@@ -37,16 +35,6 @@ function ProvinsiHome() {
         )
     }
 
-    /*function formatDate(num){
-        let tmp = num.toString()
-        if(tmp.length === 1) return '0'+tmp
-    }
-
-    const getCurrDate = () =>{
-        var today = new Date();
-        //setCurrDate(today.getFullYear() + '-' + formatDate(today.getMonth() + 1) + '-' + formatDate(today.getDate()));
-    }*/
-
     function lowerWord(val){
         return val.toLowerCase()
     }
@@ -61,12 +49,13 @@ function ProvinsiHome() {
                     //console.log(item[i])
                     setProv(item[i])
                     return
-                    //setFetchStatusProv(true)
                 }
             }
             setProv(undefined);
         }
     }
+
+    
     
     return (
         <div>
@@ -86,13 +75,14 @@ function ProvinsiHome() {
                         />
                     </Grid>
                 </Grid>
+                <br></br>
                 { prov !== undefined ? (
                     <>
                         <h2>{prov.provinsi}</h2>
                         <Grid container justify="center" className="provinsiHome">
                             <Grid container xs={12} md={6} justify="center">
                                 <Grid item md={6} xs={12} style={{color: "rgb(209, 94, 0)"}}>
-                                    <h2>Kasus</h2> 
+                                    <h2>Kasus</h2>
                                     <h3>{format(prov.kasus)}</h3>
                                 </Grid>
                                 <Grid item md={6} xs={12} style={{color: "rgb(210, 183, 0 )"}}>
@@ -108,7 +98,11 @@ function ProvinsiHome() {
                                     <h3>{format(prov.meninggal)}</h3>
                                 </Grid>
                                 <Grid xs={12}>
-                                    <p> Lihat Detail </p>
+                                    <Link to={`/provinsi/${prov.provinsi.toLowerCase()}`} style={{textDecoration: 'none'}}>
+                                        <Button variant="contained" style={{marginBottom: 10, backgroundColor: 'black', color: 'white'}} size="small" >
+                                            Lihat Detail
+                                        </Button>
+                                    </Link>
                                 </Grid>
                             </Grid>
                         </Grid>

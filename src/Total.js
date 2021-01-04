@@ -43,6 +43,11 @@ function HomeTotal() {
         setCurrDate(today.getFullYear() + '-' + formatDate(today.getMonth() + 1) + '-' + formatDate(today.getDate()));
     }
 
+    function tingkatKematian(){
+        var tmp = (Number(item.total.meninggal)/Number(item.total.positif)*100) 
+        return tmp.toString().substring(0,4) + '%';
+    }
+
     return (
         <div>
             {fetchStatus ? (
@@ -51,7 +56,7 @@ function HomeTotal() {
                 <p>Last Updated: {item.penambahan.tanggal}</p>
                 <Grid container xs={12} justify="center" className="containerUtama">
                     <Grid xs={12} align="center">
-                        <Grid item xs={9} sm={3} >
+                        <Grid item xs={9} sm={4} >
                             <Paper className="totalKasus">
                                 <h2>Jumlah Kasus</h2> 
                                 <h3>{format(item.total.positif)}</h3>
@@ -93,6 +98,10 @@ function HomeTotal() {
                                 <></>
                             )}
                         </div>
+                    </Grid>
+                    <Grid item xs={9} sm={9}>
+                        <h4 style={{color: 'black', fontWeight: 'normal', marginBottom: '-19px'}}>Tingkat Kematian</h4>
+                        <h1 style={{color: 'red', fontWeight: 'lighter'}}>{tingkatKematian()}</h1>
                     </Grid>
                 </Grid>
             </>

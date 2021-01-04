@@ -1,19 +1,8 @@
 .App {
   text-align: center;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
-.navigasi{
-  display: flex;
-  justify-content: space-around;
-  background-color: rgb(22, 51, 58);
-  color: white;
-}
-
-img{
-  width: 50%;
-  height: auto;
-}
 
 .navigasi ul{
   display: flex;
@@ -23,13 +12,37 @@ img{
   margin: 0 20px;
   list-style: none;
   font-size: 16px;
-  margin-top: 6px;
+  float: right;
+}
+
+.navigasi{
+  width: 50%;
+  text-align: right;
 }
 
 .pageTitle{
-  display: flex;
   text-align: left;
-  width: 30%;
+  width: 50%;
+}
+
+.menuIcon{
+  color: white;
+}
+
+.menu{
+  display: none;
+}
+
+@media only screen and (max-width: 631px){
+  .menu{
+    display: flex;
+  }
+  .navigasi{
+    display: none;
+  }
+  .pageTitle{
+    width: 100%;
+  }
 }
 
 .containerUtama h2{
@@ -49,17 +62,32 @@ img{
 .totalKasus{
   background-image: linear-gradient(45deg,rgb(209, 94, 0),rgb(255, 179, 93));
   margin: 0 10px;
+  animation: masuk 0.5s;
 
 }
 
 .totalSembuh{
   background-image: linear-gradient(45deg,rgb(27, 117, 39),rgb(39, 240, 89));
   margin: 0 10px;
+  transform: scale(0);
+  animation: masuk forwards;
+  animation-duration: 0.5s;
+  animation-delay: 0.1s;
 }
 
 .totalMeninggal{
   background-image: linear-gradient(45deg,rgb(139, 0, 0),rgb(255, 62, 62));
   margin: 0 10px;
+  transform: scale(0);
+  animation: masuk forwards;
+  animation-duration: 0.5s;
+  animation-delay: 0.2s;
+}
+
+@keyframes masuk{
+  0%{transform: scale(0);}
+  50%{transform: scale(1.1);}
+  100%{transform: scale(1);}
 }
 
 .judulHome{
@@ -68,18 +96,28 @@ img{
 
 .kasusBaru{
   margin-top: -19px;
-  color: rgb(209, 94, 0)
-}
-
-.meninggalBaru{
-  margin-top: -19px;
-  color: rgb(190, 0, 0)
+  color: rgb(209, 94, 0);
+  transform: scale(0);
+  animation: masuk 0.5s forwards;
 }
 
 .sembuhBaru{
   margin-top: -19px;
-  color: rgb(0, 161, 22)
+  transform: scale(0);
+  color: rgb(0, 161, 22);
+  animation: masuk forwards;
+  animation-duration: 0.5s;
+  animation-delay: 0.1s;
 }
+.meninggalBaru{
+  margin-top: -19px;
+  transform: scale(0);
+  color: rgb(190, 0, 0);
+  animation: masuk forwards;
+  animation-duration: 0.5s;
+  animation-delay: 0.2s;
+}
+
 
 .margin-top-20{
   margin-top: 50px;
