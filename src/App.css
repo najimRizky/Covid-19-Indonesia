@@ -43,6 +43,9 @@
   .pageTitle{
     width: 100%;
   }
+  .provDetail{
+    border: none;
+  }
 }
 
 .containerUtama h2{

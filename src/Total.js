@@ -44,8 +44,8 @@ function HomeTotal() {
     }
 
     function tingkatKematian(){
-        var tmp = (Number(item.total.meninggal)/Number(item.total.positif)*100) 
-        return tmp.toString().substring(0,4) + '%';
+        var tmp = (Number(item.total.meninggal)/Number(item.total.positif)*100).toFixed(2)
+        return tmp.toString() + '%';
     }
 
     return (
