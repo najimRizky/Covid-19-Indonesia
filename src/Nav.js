@@ -14,12 +14,14 @@ import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import {Home, Place, Info} from '@material-ui/icons'
 
 
 function Nav() {    
     const useStyles = makeStyles({
         list: {
-          width: 200,
+          width: 300,
         },
         fullList: {
           width: 'auto',
@@ -45,15 +47,18 @@ function Nav() {
         >
         <List>
             <ListItem>
-                <h1>Menu</h1>
+                <h2>Covid-19 Indonesia</h2>
             </ListItem>
-            <ListItem button component={Link} to="/">
+            <ListItem button component={Link} to="/" startIcon={<Home/>}>
+                <ListItemIcon><Home/></ListItemIcon>
                 <ListItemText  primary="Home" />
             </ListItem>
             <ListItem button component={Link} to="/provinsi">
+                <ListItemIcon><Place/></ListItemIcon>
                 <ListItemText  primary="Data Per Provinsi" />
             </ListItem>
             <ListItem button component={Link} to="/about">
+                <ListItemIcon><Info/></ListItemIcon>
                 <ListItemText  primary="About" />
             </ListItem>
         </List>
@@ -74,9 +79,9 @@ function Nav() {
                 </div>
                 <Typography className="pageTitle" variant="h5" >Covid-19 Indonesia</Typography>
                 <div className="navigasi">
-                    <Button component={Link} to="/" style={{color: 'white'}}>Home</Button>
-                    <Button component={Link} to="/provinsi" style={{color: 'white'}}>Data Per Provinsi</Button>
-                    <Button component={Link} to="/about" style={{color: 'white'}}>About</Button>
+                    <Button component={Link} to="/" style={{color: 'white'}} startIcon={<Home/>}>Home</Button>
+                    <Button component={Link} to="/provinsi" style={{color: 'white'}} startIcon={<Place/>}>Data Per Provinsi</Button>
+                    <Button component={Link} to="/about" style={{color: 'white'}} startIcon={<Info/>}>About</Button>
                 </div>
                 
             </Toolbar>

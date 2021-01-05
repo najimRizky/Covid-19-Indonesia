@@ -33,7 +33,7 @@
   display: none;
 }
 
-@media only screen and (max-width: 631px){
+@media only screen and (max-width: 735px){
   .menu{
     display: flex;
   }
