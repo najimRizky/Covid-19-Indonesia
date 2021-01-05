@@ -93,7 +93,9 @@ function Provinsi() {
         <>
         {fetchStatus ? (
             <Grid container justify="center">
-                <h1>Data Kasus Covid-19 Per Provinsi</h1>
+                <Grid item xs={12}>
+                    <h3>Data Kasus Covid-19 Per Provinsi</h3>
+                </Grid>
                 <Grid item xs={9}>
                     <Paper className={classes.root}>
                         <TableContainer className={classes.container}>
