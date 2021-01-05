@@ -3,6 +3,8 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import './App.css';
 import Grid from '@material-ui/core/Grid'
 import { Typography, Divider } from '@material-ui/core';
+import ChartJenisKelamin from './DoughnutChart'
+import ChartKelompokUsia from './BarChart'
 
 function ProvDetail({match}) {
     const [item, setItem] = useState([]);
@@ -41,9 +43,9 @@ function ProvDetail({match}) {
         }
     }
 
-    function genderPercent(val) {
+    /*function genderPercent(val) {
         return (val / (prov.jenis_kelamin["laki-laki"] + prov.jenis_kelamin.perempuan) * 100).toFixed(2) + '%'
-    }
+    }*/
 
     function deathRate(val) {
         return (val/prov.kasus*100).toFixed(2) + '%'
@@ -90,29 +92,19 @@ function ProvDetail({match}) {
                             <Grid item xs={12}>
                                 <h3>Jenis Kelamin</h3>
                             </Grid>
-                            <Grid item xs={6} style={{color: '#FF5733'}}>
-                                <Typography >Laki-Laki</Typography>
-                                <Typography variant="h5">{format(prov.jenis_kelamin["laki-laki"])}</Typography>
-                                <Typography>{genderPercent(prov.jenis_kelamin["laki-laki"])}</Typography>
-                            </Grid>
-                            <Grid item xs={6} style={{color: '#6F26AB'}}>
-                                <Typography>Perempuan</Typography>
-                                <Typography variant="h5">{format(prov.jenis_kelamin.perempuan)}</Typography>
-                                <Typography>{genderPercent(prov.jenis_kelamin.perempuan)}</Typography>
+                            
+                            <Grid item  xs={12}>
+                                <ChartJenisKelamin data={prov.jenis_kelamin}/>
                             </Grid>
                         </Grid>
                         <Grid container xs={12} justify="center">
                             <Grid item xs={12}>
                                 <br></br>
+                                <br></br>
                                 <h3>Kelompok Usia</h3>
                             </Grid>
-                            <Grid  xs={12}  justify="center">
-                                    <li>0-5 Tahun: {format(prov.kelompok_umur["0-5_tahun"])}</li>
-                                    <li>6-18 Tahun: {format(prov.kelompok_umur["6-18_tahun"])}</li>
-                                    <li>19-30 Tahun: {format(prov.kelompok_umur["19-30_tahun"])}</li>
-                                    <li>31-45 Tahun: {format(prov.kelompok_umur["31-45_tahun"])}</li>
-                                    <li>46-59 Tahun: {format(prov.kelompok_umur["46-59_tahun"])}</li>
-                                    <li>Diatas 60 Tahun: {format(prov.kelompok_umur["≥60_tahun"])}</li>
+                            <Grid xs={10} >
+                                <ChartKelompokUsia data={prov.kelompok_umur} />
                             </Grid>
                         </Grid>
                     </Grid>
@@ -137,4 +129,25 @@ export default ProvDetail;
                                 <Typography >31-45 Tahun: {format(prov.kelompok_umur["31-45_tahun"])}</Typography>
                                 <Typography >46-59 Tahun: {format(prov.kelompok_umur["46-59_tahun"])}</Typography>
                                 <Typography >Diatas 60 Tahun: {format(prov.kelompok_umur["≥60_tahun"])}</Typography>
+
+
+                                 <Grid item xs={6} style={{color: '#FF5733'}}>
+                                <Typography >Laki-Laki</Typography>
+                                <Typography variant="h5">{format(prov.jenis_kelamin["laki-laki"])}</Typography>
+                                <Typography>{genderPercent(prov.jenis_kelamin["laki-laki"])}</Typography>
+                            </Grid>
+                            <Grid item xs={6} style={{color: '#6F26AB'}}>
+                                <Typography>Perempuan</Typography>
+                                <Typography variant="h5">{format(prov.jenis_kelamin.perempuan)}</Typography>
+                                <Typography>{genderPercent(prov.jenis_kelamin.perempuan)}</Typography>
+                            </Grid>
+
+                            <Grid  xs={12}  justify="center">
+                                    <li>0-5 Tahun: {format(prov.kelompok_umur["0-5_tahun"])}</li>
+                                    <li>6-18 Tahun: {format(prov.kelompok_umur["6-18_tahun"])}</li>
+                                    <li>19-30 Tahun: {format(prov.kelompok_umur["19-30_tahun"])}</li>
+                                    <li>31-45 Tahun: {format(prov.kelompok_umur["31-45_tahun"])}</li>
+                                    <li>46-59 Tahun: {format(prov.kelompok_umur["46-59_tahun"])}</li>
+                                    <li>Diatas 60 Tahun: {format(prov.kelompok_umur["≥60_tahun"])}</li>
+                            </Grid>
                                 */
