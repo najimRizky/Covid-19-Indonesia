@@ -35,7 +35,8 @@ function HomeTotal() {
 
     function formatDate(num){
         let tmp = num.toString()
-        if(tmp.length === 1) return '0'+tmp
+        if(tmp.length === 1) return '0'+tmp;
+        else return tmp;
     }
 
     const getCurrDate = () =>{
@@ -54,6 +55,7 @@ function HomeTotal() {
             <>
                 <h2 className="judulHome">Data Covid-19 di Indonesia</h2>
                 <p>Last Updated: {item.penambahan.tanggal}</p>
+                <p>Now: {currDate}</p>
                 <Grid container xs={12} justify="center" className="containerUtama">
                     <Grid xs={12} align="center">
                         <Grid item xs={9} sm={4} >
