@@ -5,6 +5,8 @@ import Grid from '@material-ui/core/Grid'
 import { Typography, Divider } from '@material-ui/core';
 import ChartJenisKelamin from './DoughnutChart'
 import ChartKelompokUsia from './BarChart'
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function ProvDetail({match}) {
     const [item, setItem] = useState([]);
@@ -15,6 +17,7 @@ function ProvDetail({match}) {
     useEffect(() => {
         fetchItems();
         showProv(); 
+        Aos.init({duration: 2000});
         // eslint-disable-next-line
     },[fetchStatus])
 
@@ -54,56 +57,56 @@ function ProvDetail({match}) {
     return (
         <div>
             { prov !== undefined ? (   
-                <Grid container justify="center">
-                    <Grid item xs={12} >
+                <Grid container justify="center" >
+                    <Grid item xs={12} data-aos="fade-up" >
                         <h2>{match.params.id.toUpperCase()}</h2>
                     </Grid>
                     <Grid item xs={12} >
-                        <Typography variant="h6">Tingkat Kematian: <b style={{color: 'red', fontSize: 'normal'}}>({deathRate(prov.meninggal)})</b></Typography>
+                        <Typography variant="h6" data-aos="fade-up" >Tingkat Kematian: <b style={{color: 'red', fontSize: 'normal'}}>({deathRate(prov.meninggal)})</b></Typography>
                         <br></br>
                     </Grid>
                     <Grid container md={7} justify="center">
                         <Grid item md={6} xs={10} style={{borderBottom: '1px solid #00C9C7', borderRight: '1px solid #00C9C7'}} className="provDetail">
-                            <Typography> Kasus</Typography>
-                            <Typography variant="h5">{format(prov.kasus)}</Typography>
-                            <Typography>(+{format(prov.penambahan.positif)})</Typography>
+                            <Typography data-aos="fade-up"> Kasus</Typography>
+                            <Typography variant="h5" data-aos="fade-up">{format(prov.kasus)}</Typography>
+                            <Typography data-aos="fade-up">(+{format(prov.penambahan.positif)})</Typography>
                         </Grid>
                         <Grid item md={6} xs={10} style={{borderBottom: '1px solid #00C9C7', borderLeft: '1px solid #00C9C7'}} className="provDetail">
-                            <Typography> Meninggal</Typography>
-                            <Typography variant="h5">{format(prov.meninggal)}</Typography>
-                            <Typography>(+{format(prov.penambahan.meninggal)})</Typography>
+                            <Typography data-aos="fade-up"> Meninggal</Typography>
+                            <Typography data-aos="fade-up" variant="h5">{format(prov.meninggal)}</Typography>
+                            <Typography data-aos="fade-up">(+{format(prov.penambahan.meninggal)})</Typography>
 
                         </Grid>
                         <Grid item md={6} xs={10} style={{borderTop: '1px solid #00C9C7', borderRight: '1px solid #00C9C7'}} className="provDetail">
-                            <Typography> Sembuh</Typography>
-                            <Typography variant="h5">{format(prov.sembuh)}</Typography>
-                            <Typography>(+{format(prov.penambahan.sembuh)})</Typography>
+                            <Typography data-aos="fade-up"> Sembuh</Typography>
+                            <Typography data-aos="fade-up" variant="h5">{format(prov.sembuh)}</Typography>
+                            <Typography data-aos="fade-up">(+{format(prov.penambahan.sembuh)})</Typography>
 
                         </Grid>
                         <Grid item md={6} xs={10} style={{borderTop: '1px solid #00C9C7', borderLeft: '1px solid #00C9C7'}} className="provDetail">
-                            <Typography> Dirawat</Typography>
-                            <Typography variant="h5">{format(prov.dirawat)}</Typography>
+                            <Typography data-aos="fade-up"> Dirawat</Typography>
+                            <Typography data-aos="fade-up" variant="h5">{format(prov.dirawat)}</Typography>
                         </Grid>
                         <Grid item xs={12}>
                         <br></br>
                             <Divider/>
                         </Grid>
-                        <Grid container xs={8} justify="center">
-                            <Grid item xs={12}>
+                        <Grid container xs={8} justify="center" >
+                            <Grid item xs={12} data-aos="fade-up">
                                 <h3>Jenis Kelamin</h3>
                             </Grid>
                             
-                            <Grid item  xs={12}>
+                            <Grid item  xs={12} data-aos="fade-up">
                                 <ChartJenisKelamin data={prov.jenis_kelamin}/>
                             </Grid>
                         </Grid>
                         <Grid container xs={12} justify="center">
-                            <Grid item xs={12}>
+                            <Grid item xs={12} data-aos="fade-up">
                                 <br></br>
                                 <br></br>
                                 <h3>Kelompok Usia</h3>
                             </Grid>
-                            <Grid xs={10} >
+                            <Grid xs={10} data-aos="fade-up">
                                 <ChartKelompokUsia data={prov.kelompok_umur} />
                             </Grid>
                         </Grid>
