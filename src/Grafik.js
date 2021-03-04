@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import './App.css';
 import Grid from '@material-ui/core/Grid';
 import { Bar } from 'react-chartjs-2';
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function Grafik() {
     const [item, setItem] = useState([]);
@@ -13,6 +15,7 @@ function Grafik() {
     useEffect(() => {
         fetchItems();
         setArray();
+        Aos.init({duration: 1000, once: true});
         // eslint-disable-next-line
     },[fetchStatus])
 
@@ -44,7 +47,7 @@ function Grafik() {
         <div>
             {fetchStatus ? (
                 <>
-                    <Grid container justify="center">
+                    <Grid container justify="center" data-aos="fade-left">
                         <Grid item xs={11}>
                             <Bar  
                             data={

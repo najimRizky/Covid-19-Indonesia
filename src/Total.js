@@ -3,7 +3,8 @@ import './App.css';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import CircularProgress from '@material-ui/core/CircularProgress';
-
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function HomeTotal() {
     const [item, setItem] = useState([]);
@@ -13,6 +14,7 @@ function HomeTotal() {
     useEffect(() => {
         fetchItems();
         getCurrDate();
+        Aos.init({duration: 1000, once: true});
         // eslint-disable-next-line
     },[])
 
@@ -53,11 +55,11 @@ function HomeTotal() {
         <div>
             {fetchStatus ? (
             <>
-                <h2 className="judulHome">Data Covid-19 di Indonesia</h2>
-                <p>Last Updated: {item.penambahan.tanggal}</p>
-                <p>Now: {currDate}</p>
+                <h2 className="judulHome" data-aos="fade-down">Data Covid-19 di Indonesia</h2>
+                <p data-aos="fade-down" data-aos-delay="400">Last Updated: {item.penambahan.tanggal}</p>
+                <p data-aos="fade-down" data-aos-delay="800" >Now: {currDate}</p>
                 <Grid container xs={12} justify="center" className="containerUtama">
-                    <Grid xs={12} align="center">
+                    <Grid xs={12} align="center" data-aos="flip-left" data-aos-delay="1200">
                         <Grid item xs={9} sm={4} >
                             <Paper className="totalKasus">
                                 <h2>Jumlah Kasus</h2> 
@@ -73,7 +75,7 @@ function HomeTotal() {
                             </div>
                         </Grid>
                     </Grid>
-                    <Grid item xs={9} sm={3} >
+                    <Grid item xs={9} sm={3} data-aos="flip-left" data-aos-delay="1400">
                         <Paper className="totalSembuh">
                             <h2>Sembuh</h2>
                             <h3>{format(item.total.sembuh)}</h3>
@@ -87,7 +89,7 @@ function HomeTotal() {
                             )}
                         </div>
                     </Grid>
-                    <Grid item xs={9} sm={3} >
+                    <Grid item xs={9} sm={3} data-aos="flip-left" data-aos-delay="1600">
                         <Paper className="totalMeninggal">
                             <h2>Meninggal</h2>
                             <h3>{format(item.total.meninggal)}</h3>
@@ -101,7 +103,7 @@ function HomeTotal() {
                             )}
                         </div>
                     </Grid>
-                    <Grid item xs={9} sm={9}>
+                    <Grid item xs={9} sm={9} data-aos="fade-left" data-aos-delay="1900">
                         <h4 style={{color: 'black', fontWeight: 'normal', marginBottom: '-19px'}}>Tingkat Kematian</h4>
                         <h1 style={{color: 'red', fontWeight: 'lighter'}}>{tingkatKematian()}</h1>
                     </Grid>

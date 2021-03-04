@@ -5,6 +5,8 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import Button from '@material-ui/core/Button';
 import {Link} from 'react-router-dom'
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 
 function ProvinsiHome() {
@@ -15,6 +17,7 @@ function ProvinsiHome() {
     useEffect(() => {
         fetchItems();
         showProv();
+        Aos.init({duration: 700, once: true});
         // eslint-disable-next-line
     },[])
 
@@ -61,8 +64,8 @@ function ProvinsiHome() {
         <div>
             {fetchStatus ? (
             <div>  
-                <p>Cari Berdasarkan Provinsi</p>
-                <Grid container justify="center" xs={12}>
+                <p data-aos="fade-left">Cari Berdasarkan Provinsi</p>
+                <Grid container justify="center" xs={12} data-aos="fade-right"> 
                     <Grid item xs={12} md={6} align="center">
                         <Autocomplete
                             id="combo-box-demo"
@@ -78,26 +81,26 @@ function ProvinsiHome() {
                 <br></br>
                 { prov !== undefined ? (
                     <>
-                        <h2>{prov.provinsi}</h2>
+                        <h2 data-aos="zoom-in-up" data-aos-delay="0">{prov.provinsi}</h2>
                         <Grid container justify="center" className="provinsiHome">
-                            <Grid container xs={12} md={6} justify="center">
-                                <Grid item md={6} xs={12} style={{color: "rgb(209, 94, 0)"}}>
+                            <Grid container xs={12} md={6} justify="center" >
+                                <Grid data-aos="zoom-in-up" data-aos-delay="400"  item md={6} xs={12} style={{color: "rgb(209, 94, 0)"}}>
                                     <h2>Kasus</h2>
                                     <h3>{format(prov.kasus)}</h3>
                                 </Grid>
-                                <Grid item md={6} xs={12} style={{color: "rgb(210, 183, 0 )"}}>
+                                <Grid data-aos="zoom-in-up" data-aos-delay="800" item md={6} xs={12} style={{color: "rgb(210, 183, 0 )"}}>
                                     <h2>Dirawat</h2> 
                                     <h3>{format(prov.dirawat)}</h3>
                                 </Grid>
-                                <Grid item md={6} xs={12} style={{color: "rgb(0, 161, 22)"}}>
+                                <Grid data-aos="zoom-in-up" data-aos-delay="1200" item md={6} xs={12} style={{color: "rgb(0, 161, 22)"}}>
                                     <h2>Sembuh</h2> 
                                     <h3>{format(prov.sembuh)}</h3>
                                 </Grid>
-                                <Grid item md={6} xs={12} style={{color: "rgb(190, 0, 0)"}}>
+                                <Grid data-aos="zoom-in-up" data-aos-delay="1600" item md={6} xs={12} style={{color: "rgb(190, 0, 0)"}}>
                                     <h2>Meninggal</h2> 
                                     <h3>{format(prov.meninggal)}</h3>
                                 </Grid>
-                                <Grid xs={12}>
+                                <Grid data-aos="fade-left" data-aos-delay="2000" xs={12}>
                                     <Link to={`/provinsi/${prov.provinsi.toLowerCase()}`} style={{textDecoration: 'none'}}>
                                         <Button variant="contained" style={{marginBottom: 10, backgroundColor: 'black', color: 'white'}} size="small" >
                                             Lihat Detail

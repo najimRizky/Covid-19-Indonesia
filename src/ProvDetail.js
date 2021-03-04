@@ -16,8 +16,8 @@ function ProvDetail({match}) {
 
     useEffect(() => {
         fetchItems();
-        showProv(); 
-        Aos.init({duration: 2000});
+        showProv();  
+        Aos.init({duration: 1000, once: true});
         // eslint-disable-next-line
     },[fetchStatus])
 
@@ -58,7 +58,7 @@ function ProvDetail({match}) {
         <div>
             { prov !== undefined ? (   
                 <Grid container justify="center" >
-                    <Grid item xs={12} data-aos="fade-up" >
+                    <Grid item xs={12} data-aos="fade-down" >
                         <h2>{match.params.id.toUpperCase()}</h2>
                     </Grid>
                     <Grid item xs={12} >
@@ -66,26 +66,26 @@ function ProvDetail({match}) {
                         <br></br>
                     </Grid>
                     <Grid container md={7} justify="center">
-                        <Grid item md={6} xs={10} style={{borderBottom: '1px solid #00C9C7', borderRight: '1px solid #00C9C7'}} className="provDetail">
-                            <Typography data-aos="fade-up"> Kasus</Typography>
-                            <Typography variant="h5" data-aos="fade-up">{format(prov.kasus)}</Typography>
-                            <Typography data-aos="fade-up">(+{format(prov.penambahan.positif)})</Typography>
+                        <Grid data-aos="fade-down-right" item md={6} xs={10} style={{borderBottom: '1px solid #00C9C7', borderRight: '1px solid #00C9C7'}} className="provDetail">
+                            <Typography > Kasus</Typography>
+                            <Typography  variant="h5" >{format(prov.kasus)}</Typography>
+                            <Typography >(+{format(prov.penambahan.positif)})</Typography>
                         </Grid>
-                        <Grid item md={6} xs={10} style={{borderBottom: '1px solid #00C9C7', borderLeft: '1px solid #00C9C7'}} className="provDetail">
-                            <Typography data-aos="fade-up"> Meninggal</Typography>
-                            <Typography data-aos="fade-up" variant="h5">{format(prov.meninggal)}</Typography>
-                            <Typography data-aos="fade-up">(+{format(prov.penambahan.meninggal)})</Typography>
+                        <Grid data-aos="fade-down-left" item md={6} xs={10} style={{borderBottom: '1px solid #00C9C7', borderLeft: '1px solid #00C9C7'}} className="provDetail">
+                            <Typography > Meninggal</Typography>
+                            <Typography variant="h5">{format(prov.meninggal)}</Typography>
+                            <Typography >(+{format(prov.penambahan.meninggal)})</Typography>
 
                         </Grid>
-                        <Grid item md={6} xs={10} style={{borderTop: '1px solid #00C9C7', borderRight: '1px solid #00C9C7'}} className="provDetail">
-                            <Typography data-aos="fade-up"> Sembuh</Typography>
-                            <Typography data-aos="fade-up" variant="h5">{format(prov.sembuh)}</Typography>
-                            <Typography data-aos="fade-up">(+{format(prov.penambahan.sembuh)})</Typography>
+                        <Grid  data-aos="fade-up-right" item md={6} xs={10} style={{borderTop: '1px solid #00C9C7', borderRight: '1px solid #00C9C7'}} className="provDetail">
+                            <Typography > Sembuh</Typography>
+                            <Typography  variant="h5">{format(prov.sembuh)}</Typography>
+                            <Typography >(+{format(prov.penambahan.sembuh)})</Typography>
 
                         </Grid>
-                        <Grid item md={6} xs={10} style={{borderTop: '1px solid #00C9C7', borderLeft: '1px solid #00C9C7'}} className="provDetail">
-                            <Typography data-aos="fade-up"> Dirawat</Typography>
-                            <Typography data-aos="fade-up" variant="h5">{format(prov.dirawat)}</Typography>
+                        <Grid  data-aos="fade-up-left" item md={6} xs={10} style={{borderTop: '1px solid #00C9C7', borderLeft: '1px solid #00C9C7'}} className="provDetail">
+                            <Typography> Dirawat</Typography>
+                            <Typography variant="h5">{format(prov.dirawat)}</Typography>
                         </Grid>
                         <Grid item xs={12}>
                         <br></br>
