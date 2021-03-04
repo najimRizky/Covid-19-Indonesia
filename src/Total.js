@@ -103,7 +103,7 @@ function HomeTotal() {
                             )}
                         </div>
                     </Grid>
-                    <Grid item xs={9} sm={9} data-aos="fade-left" data-aos-delay="1900">
+                    <Grid item xs={9} sm={9} data-aos="fade-left" data-aos-delay="1800">
                         <h4 style={{color: 'black', fontWeight: 'normal', marginBottom: '-19px'}}>Tingkat Kematian</h4>
                         <h1 style={{color: 'red', fontWeight: 'lighter'}}>{tingkatKematian()}</h1>
                     </Grid>
