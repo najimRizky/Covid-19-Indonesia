@@ -39,7 +39,7 @@ function ProvDetail({match}) {
             for(let i=0; i<34; i++){
                 if(item[i].provinsi === match.params.id.toUpperCase()){
                     setProv(item[i])
-                    console.log(item[i].kelompok_umur)
+                    // console.log(item[i].kelompok_umur)
                     break;
                 }
             }
