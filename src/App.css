@@ -63,14 +63,15 @@
 }
 
 .totalKasus{
-  background-image: linear-gradient(45deg,rgb(209, 94, 0),rgb(255, 179, 93));
+  background-image: linear-gradient(45deg,#663f3f,#663f3f);
+  /* background-image: ; */
   margin: 0 10px;
   animation: masuk 0.5s;
 
 }
 
 .totalSembuh{
-  background-image: linear-gradient(45deg,rgb(27, 117, 39),rgb(39, 240, 89));
+  background-image: linear-gradient(45deg,#51c2d5,#51c2d5);
   margin: 0 10px;
   transform: scale(0);
   animation: masuk forwards;
@@ -79,7 +80,7 @@
 }
 
 .totalMeninggal{
-  background-image: linear-gradient(45deg,rgb(139, 0, 0),rgb(255, 62, 62));
+  background-image: linear-gradient(45deg,rgb(251, 54, 64),rgb(251, 54, 64));
   margin: 0 10px;
   transform: scale(0);
   animation: masuk forwards;
@@ -128,4 +129,29 @@
 
 .provinsiHome h2{
   margin-bottom: -10px;
+}
+
+#provHome{
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 40%;
+  margin-bottom: 10px;
+}
+
+#provHome tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+#provHome tr:hover {background-color: #ddd;}
+
+#provHome th{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  background-color: #3d84b8;
+  color: white;
+}
+
+#provHome td, #provHome th{
+  border: 3px solid rgb(255, 255, 255);
+  padding: 8px;
 }

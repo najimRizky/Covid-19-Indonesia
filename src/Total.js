@@ -61,7 +61,7 @@ function HomeTotal() {
                 <Grid container xs={12} justify="center" className="containerUtama">
                     <Grid xs={12} align="center" data-aos="flip-left" data-aos-delay="1200">
                         <Grid item xs={9} sm={4} >
-                            <Paper className="totalKasus">
+                            <Paper className="totalKasus" style={{borderRadius: '18px'}}>
                                 <h2>Jumlah Kasus</h2> 
                                 <h3>{format(item.total.positif)}</h3>
                             </Paper>
@@ -76,7 +76,7 @@ function HomeTotal() {
                         </Grid>
                     </Grid>
                     <Grid item xs={9} sm={3} data-aos="flip-left" data-aos-delay="1400">
-                        <Paper className="totalSembuh">
+                        <Paper className="totalSembuh" style={{borderRadius: '18px'}}>
                             <h2>Sembuh</h2>
                             <h3>{format(item.total.sembuh)}</h3>
                         </Paper>
@@ -89,8 +89,8 @@ function HomeTotal() {
                             )}
                         </div>
                     </Grid>
-                    <Grid item xs={9} sm={3} data-aos="flip-left" data-aos-delay="1600">
-                        <Paper className="totalMeninggal">
+                    <Grid item xs={9} sm={3}  data-aos="flip-left" data-aos-delay="1600">
+                        <Paper className="totalMeninggal" style={{borderRadius: '18px'}}>
                             <h2>Meninggal</h2>
                             <h3>{format(item.total.meninggal)}</h3>
                         </Paper>
@@ -103,7 +103,7 @@ function HomeTotal() {
                             )}
                         </div>
                     </Grid>
-                    <Grid item xs={9} sm={9} data-aos="fade-left" data-aos-delay="1800">
+                    <Grid item xs={9} sm={9} data-aos="fade-left" >
                         <h4 style={{color: 'black', fontWeight: 'normal', marginBottom: '-19px'}}>Tingkat Kematian</h4>
                         <h1 style={{color: 'red', fontWeight: 'lighter'}}>{tingkatKematian()}</h1>
                     </Grid>

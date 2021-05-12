@@ -21,12 +21,12 @@ import {Home, Place, Info} from '@material-ui/icons'
 function Nav() {    
     const useStyles = makeStyles({
         list: {
-          width: 300,
+            width: 300,
         },
         fullList: {
-          width: 'auto',
+            width: 'auto',
         },
-      });
+    });
     
     const classes = useStyles();
     const [state, setState] = React.useState({left: false,});
@@ -67,7 +67,7 @@ function Nav() {
     );
 
     return (
-        <AppBar position="static"  style={{backgroundColor: '#005DA6', display: 'flex'}}>
+        <AppBar position="static"  style={{backgroundColor: '#3d84b8', display: 'flex'}}>
             <Toolbar>
                 <div className="menu">
                     <React.Fragment key={'left'}>

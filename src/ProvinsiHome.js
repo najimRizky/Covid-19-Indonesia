@@ -7,6 +7,8 @@ import Button from '@material-ui/core/Button';
 import {Link} from 'react-router-dom'
 import Aos from "aos";
 import "aos/dist/aos.css";
+import './App.css';
+
 
 
 function ProvinsiHome() {
@@ -58,10 +60,8 @@ function ProvinsiHome() {
         }
     }
 
-    
-    
     return (
-        <div>
+        <div style={{marginBottom: '15px'}}>
             {fetchStatus ? (
             <div>  
                 <p data-aos="fade-left">Cari Berdasarkan Provinsi</p>
@@ -78,31 +78,38 @@ function ProvinsiHome() {
                         />
                     </Grid>
                 </Grid>
-                <br></br>
                 { prov !== undefined ? (
                     <>
                         <h2 data-aos="zoom-in-up" data-aos-delay="0">{prov.provinsi}</h2>
                         <Grid container justify="center" className="provinsiHome">
                             <Grid container xs={12} md={6} justify="center" >
-                                <Grid data-aos="zoom-in-up" data-aos-delay="400"  item md={6} xs={12} style={{color: "rgb(209, 94, 0)"}}>
-                                    <h2>Kasus</h2>
-                                    <h3>{format(prov.kasus)}</h3>
-                                </Grid>
-                                <Grid data-aos="zoom-in-up" data-aos-delay="800" item md={6} xs={12} style={{color: "rgb(210, 183, 0 )"}}>
-                                    <h2>Dirawat</h2> 
-                                    <h3>{format(prov.dirawat)}</h3>
-                                </Grid>
-                                <Grid data-aos="zoom-in-up" data-aos-delay="1200" item md={6} xs={12} style={{color: "rgb(0, 161, 22)"}}>
-                                    <h2>Sembuh</h2> 
-                                    <h3>{format(prov.sembuh)}</h3>
-                                </Grid>
-                                <Grid data-aos="zoom-in-up" data-aos-delay="1600" item md={6} xs={12} style={{color: "rgb(190, 0, 0)"}}>
-                                    <h2>Meninggal</h2> 
-                                    <h3>{format(prov.meninggal)}</h3>
-                                </Grid>
-                                <Grid data-aos="fade-left" data-aos-delay="2000" xs={12}>
+                                <table id="provHome">
+                                    <thead>
+                                        <th data-aos="fade-right" data-aos-delay="0">Keterangan</th>
+                                        <th data-aos="fade-left" data-aos-delay="0">Jumlah</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td data-aos="fade-right" data-aos-delay="400">Kasus</td>
+                                            <td data-aos="fade-left" data-aos-delay="400">{format(prov.kasus)}</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-aos="fade-right" data-aos-delay="800">Dirawat</td>
+                                            <td data-aos="fade-left" data-aos-delay="800">{format(prov.dirawat)}</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-aos="fade-right" data-aos-delay="1200">Sembuh</td>
+                                            <td data-aos="fade-left" data-aos-delay="1200">{format(prov.sembuh)}</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-aos="fade-right" data-aos-delay="1600">Meninggal</td>
+                                            <td data-aos="fade-left" data-aos-delay="1600">{format(prov.meninggal)}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <Grid data-aos="fade-left" xs={12}>
                                     <Link to={`/provinsi/${prov.provinsi.toLowerCase()}`} style={{textDecoration: 'none'}}>
-                                        <Button variant="contained" style={{marginBottom: 10, backgroundColor: 'black', color: 'white'}} size="small" >
+                                        <Button variant="contained" style={{marginBottom: 10, backgroundColor: '#344fa1', color: 'white'}} size="small" >
                                             Lihat Detail
                                         </Button>
                                     </Link>
@@ -131,5 +138,20 @@ function ProvinsiHome() {
 export default ProvinsiHome;
 
 /*
-
+<Grid data-aos="zoom-in-up" data-aos-delay="400"  item md={6} xs={12} style={{color: "rgb(209, 94, 0)"}}>
+                                    <h2>Kasus</h2>
+                                    <h3>{format(prov.kasus)}</h3>
+                                </Grid>
+                                <Grid data-aos="zoom-in-up" data-aos-delay="800" item md={6} xs={12} style={{color: "rgb(210, 183, 0 )"}}>
+                                    <h2>Dirawat</h2> 
+                                    <h3>{format(prov.dirawat)}</h3>
+                                </Grid>
+                                <Grid data-aos="zoom-in-up" data-aos-delay="1200" item md={6} xs={12} style={{color: "rgb(0, 161, 22)"}}>
+                                    <h2>Sembuh</h2> 
+                                    <h3>{format(prov.sembuh)}</h3>
+                                </Grid>
+                                <Grid data-aos="zoom-in-up" data-aos-delay="1600" item md={6} xs={12} style={{color: "rgb(190, 0, 0)"}}>
+                                    <h2>Meninggal</h2> 
+                                    <h3>{format(prov.meninggal)}</h3>
+                                </Grid>
 */
