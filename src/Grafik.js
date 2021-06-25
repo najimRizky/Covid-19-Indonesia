@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import './App.css';
 import Grid from '@material-ui/core/Grid';
-import { Bar } from 'react-chartjs-2';
+import { Bar, Line } from 'react-chartjs-2';
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -48,8 +48,8 @@ function Grafik() {
             {fetchStatus ? (
                 <>
                     <Grid container justify="center" data-aos="fade-left">
-                        <Grid item xs={11}>
-                            <Bar  
+                        <Grid item xs={11} md={5}>
+                            <Line  
                             data={
                                 {
                                     labels: tgl,
@@ -57,8 +57,31 @@ function Grafik() {
                                         {
                                             label: 'Jumlah kasus Positif',
                                             data: positif,
-                                            backgroundColor: '#0022F7'
-                                        },
+                                            borderColor: '#0022F7',
+                                            borderWidth: 2,
+                                            backgroundColor: 'rgba(0,34,247,0.2)',
+                                            pointBackgroundColor: 'rgba(0,0,0,0)',
+                                            pointBorderColor: 'rgba(0,0,0,0)',
+                                        }
+                                    ],
+                                }
+                            }
+                            height={400}
+                            width={200}
+                            options={{
+                                maintainAspectRatio: false,
+                                fill: false,
+                            }}
+                            backgroundColor = 'rgba(0, 0, 0, 1)'
+                            />
+                            
+                        </Grid>
+                        <Grid item xs={11} md={5}>
+                            <Bar  
+                            data={
+                                {
+                                    labels: tgl,
+                                    datasets:[
                                         {
                                             label: 'Pertambahan kasus positif',
                                             data: pertambahan,
@@ -74,6 +97,7 @@ function Grafik() {
                                 maintainAspectRatio: false
                             }}
                             />
+                            
                         </Grid>
                     </Grid>
                 </>
