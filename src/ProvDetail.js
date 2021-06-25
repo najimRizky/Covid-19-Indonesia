@@ -119,10 +119,12 @@ function ProvDetail({match}) {
                     <Grid item xs={12}><br></br></Grid>
                 </Grid>
             ) : (
-                
                 <>
                 { fetchStatus === false ? (
-                    <h2>Terdapat error pada pengambilan data, harap kembali lagi nanti</h2>
+                    <>
+                        <CircularProgress className="margin-top-20" />
+                        <h2>Terdapat error pada pengambilan data, harap kembali lagi nanti</h2>
+                    </>
                 ):(
                     <CircularProgress className="margin-top-20" />
                 )
