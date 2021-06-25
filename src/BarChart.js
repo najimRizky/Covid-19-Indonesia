@@ -3,12 +3,12 @@ import { Bar } from 'react-chartjs-2';
 
 function barChart(props) {
     const arr = [];
-    arr.push(props.data[0]["0-5"])
-    arr.push(props.data[1]["6-18"])
-    arr.push(props.data[2]["19-30"])
-    arr.push(props.data[3]["31-45"])
-    arr.push(props.data[4]["46-59"])
-    arr.push(props.data[5]["≥ 60"])
+    arr.push(props.data["0-5"])
+    arr.push(props.data["6-18"])
+    arr.push(props.data["19-30"])
+    arr.push(props.data["31-45"])
+    arr.push(props.data["46-59"])
+    arr.push(props.data["≥ 60"])
     
     return(
         <Bar

@@ -23,10 +23,15 @@ function ProvDetail({match}) {
 
     const fetchItems = async () => {
         const data = await fetch('https://apicovid19indonesia-v2.vercel.app/api/indonesia/provinsi/more');
-        const items = await data.json();
-        //console.log(items)
-        setItem(items);
-        setFetchStatus(true)
+        if(data.status === 404){
+            // console.log(data.status);
+            setFetchStatus(false)
+        }else{
+            const items = await data.json();
+            //console.log(items)
+            setItem(items);
+            setFetchStatus(true)
+        }
     }
 
     const format = num => {
@@ -39,7 +44,7 @@ function ProvDetail({match}) {
             for(let i=0; i<34; i++){
                 if(item[i].provinsi === match.params.id.toUpperCase()){
                     setProv(item[i])
-                    // console.log(item[i].kelompok_umur)
+                    //console.log(item[i].kelompok_umur)
                     break;
                 }
             }
@@ -114,8 +119,14 @@ function ProvDetail({match}) {
                     <Grid item xs={12}><br></br></Grid>
                 </Grid>
             ) : (
+                
                 <>
+                { fetchStatus === false ? (
+                    <h2>Terdapat error pada pengambilan data, harap kembali lagi nanti</h2>
+                ):(
                     <CircularProgress className="margin-top-20" />
+                )
+                }
                 </>
             )
             }
@@ -124,33 +135,3 @@ function ProvDetail({match}) {
 }
 
 export default ProvDetail;
-
-/*
-<Typography >0-5 Tahun: {format(prov.kelompok_umur["0-5_tahun"])}</Typography>
-                                <Typography >6-18 Tahun: {format(prov.kelompok_umur["6-18_tahun"])}</Typography>
-                                <Typography >19-30 Tahun: {format(prov.kelompok_umur["19-30_tahun"])}</Typography>
-                                <Typography >31-45 Tahun: {format(prov.kelompok_umur["31-45_tahun"])}</Typography>
-                                <Typography >46-59 Tahun: {format(prov.kelompok_umur["46-59_tahun"])}</Typography>
-                                <Typography >Diatas 60 Tahun: {format(prov.kelompok_umur["≥60_tahun"])}</Typography>
-
-
-                                 <Grid item xs={6} style={{color: '#FF5733'}}>
-                                <Typography >Laki-Laki</Typography>
-                                <Typography variant="h5">{format(prov.jenis_kelamin["laki-laki"])}</Typography>
-                                <Typography>{genderPercent(prov.jenis_kelamin["laki-laki"])}</Typography>
-                            </Grid>
-                            <Grid item xs={6} style={{color: '#6F26AB'}}>
-                                <Typography>Perempuan</Typography>
-                                <Typography variant="h5">{format(prov.jenis_kelamin.perempuan)}</Typography>
-                                <Typography>{genderPercent(prov.jenis_kelamin.perempuan)}</Typography>
-                            </Grid>
-
-                            <Grid  xs={12}  justify="center">
-                                    <li>0-5 Tahun: {format(prov.kelompok_umur["0-5_tahun"])}</li>
-                                    <li>6-18 Tahun: {format(prov.kelompok_umur["6-18_tahun"])}</li>
-                                    <li>19-30 Tahun: {format(prov.kelompok_umur["19-30_tahun"])}</li>
-                                    <li>31-45 Tahun: {format(prov.kelompok_umur["31-45_tahun"])}</li>
-                                    <li>46-59 Tahun: {format(prov.kelompok_umur["46-59_tahun"])}</li>
-                                    <li>Diatas 60 Tahun: {format(prov.kelompok_umur["≥60_tahun"])}</li>
-                            </Grid>
-                                */

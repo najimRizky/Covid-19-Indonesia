@@ -21,7 +21,8 @@ function App() {
           <Route path="/provinsi/:id" component={ProvDetail} />
         </Switch>
       </Router>
-        <Footer/>
+      <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+      <Footer/>
     </div>
   );
 

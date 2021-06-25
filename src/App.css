@@ -1,8 +1,15 @@
 .App {
   text-align: center;
   font-family: 'Roboto', sans-serif;
+  position: relative;
+  min-height: 100vh;
 }
 
+.footer{
+  margin-top: auto;
+  position: absolute;
+  bottom: 0;
+}
 
 .navigasi ul{
   display: flex;
