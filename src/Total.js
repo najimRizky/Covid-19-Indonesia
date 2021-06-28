@@ -47,6 +47,20 @@ function HomeTotal() {
         setCurrDate(today.getFullYear() + '-' + formatDate(today.getMonth() + 1) + '-' + formatDate(today.getDate()));
     }
 
+    function getLastUpdate(num){
+        // console.log(num);
+        let lastUpdate = new Date(num);
+        let hari = lastUpdate.toLocaleString('default', {weekday: 'long'});
+        let tgl = formatDate(lastUpdate.getDate());
+        let bln = lastUpdate.toLocaleString('default', { month: 'long'});
+        let thn = formatDate(lastUpdate.getFullYear());
+        let jam = formatDate(lastUpdate.getHours());
+        let mnt = formatDate(lastUpdate.getMinutes());
+        let dtk = formatDate(lastUpdate.getSeconds());
+        lastUpdate = hari + ", " + tgl + "/" + bln + "/" + thn + " " + jam + ":" + mnt +  ":"  + dtk + " WIB";
+        return lastUpdate;
+    }
+
     function tingkatKematian(){
         var tmp = (Number(item.total.meninggal)/Number(item.total.positif)*100).toFixed(2)
         // return tmp.toString() + '%';
@@ -58,8 +72,8 @@ function HomeTotal() {
             {fetchStatus ? (
             <>
                 <h2 className="judulHome" data-aos="fade-down">Data Covid-19 di Indonesia</h2>
-                <p data-aos="fade-down" data-aos-delay="400">Last Updated: {item.penambahan.tanggal}</p>
-                <p data-aos="fade-down" data-aos-delay="800" >Now: {currDate}</p>
+                <p data-aos="fade-down" data-aos-delay="400">Terakhir update: {getLastUpdate(item.total.lastUpdate)}</p>
+                {/* <p data-aos="fade-down" data-aos-delay="800" >Now: {currDate}</p> */}
                 <Grid container xs={12} justify="center" className="containerUtama">
                     <Grid xs={12} align="center" data-aos="flip-left" data-aos-delay="1200">
                         <Grid item xs={9} sm={4} >
@@ -70,7 +84,8 @@ function HomeTotal() {
                             </Paper>
                             <div className="kasusBaru">
                                 {currDate === item.penambahan.tanggal ? (
-                                    <h4 >+{format(item.penambahan.positif)}</h4>
+                                    // <h4 >+{format(item.penambahan.positif)}</h4>
+                                    <h4 >+<CountUp end={item.penambahan.positif} separator="." delay={1.5}/></h4>
                                 ) : 
                                 (
                                     <></>
@@ -86,7 +101,8 @@ function HomeTotal() {
                         </Paper>
                         <div className="sembuhBaru">
                             {currDate === item.penambahan.tanggal ? (
-                                <h4 >+{format(item.penambahan.sembuh)}</h4>
+                                // <h4 >+{format(item.penambahan.sembuh)}</h4>
+                                <h4 >+<CountUp end={item.penambahan.sembuh} separator="." delay={1.6}/></h4>
                             ) : 
                             (
                                 <></>
@@ -101,7 +117,9 @@ function HomeTotal() {
                         </Paper>
                         <div className="meninggalBaru">
                             {currDate === item.penambahan.tanggal ? (
-                                <h4 >+{format(item.penambahan.meninggal)}</h4>
+                                // <h4 >+{format(item.penambahan.meninggal)}</h4>
+                                <h4 >+<CountUp end={item.penambahan.meninggal} separator="." delay={1.6}/></h4>
+
                             ) : 
                             (
                                 <></>
