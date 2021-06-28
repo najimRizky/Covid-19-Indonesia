@@ -8,6 +8,8 @@ import {Link} from 'react-router-dom'
 import Aos from "aos";
 import "aos/dist/aos.css";
 import './App.css';
+import CountUp from 'react-countup';
+
 
 
 
@@ -91,19 +93,23 @@ function ProvinsiHome() {
                                     <tbody>
                                         <tr>
                                             <td data-aos="fade-right" data-aos-delay="400">Kasus</td>
-                                            <td data-aos="fade-left" data-aos-delay="400">{format(prov.kasus)}</td>
+                                            {/* <td data-aos="fade-left" data-aos-delay="400">{format(prov.kasus)}</td> */}
+                                            <td data-aos="fade-left" data-aos-delay="400"><CountUp end={prov.kasus} separator="." delay={0.4} /></td>
                                         </tr>
                                         <tr>
                                             <td data-aos="fade-right" data-aos-delay="800">Dirawat</td>
-                                            <td data-aos="fade-left" data-aos-delay="800">{format(prov.dirawat)}</td>
+                                            {/* <td data-aos="fade-left" data-aos-delay="800">{format(prov.dirawat)}</td> */}
+                                            <td data-aos="fade-left" data-aos-delay="800"><CountUp end={prov.dirawat} separator="." delay={0.8} /></td>
                                         </tr>
                                         <tr>
                                             <td data-aos="fade-right" data-aos-delay="1200">Sembuh</td>
-                                            <td data-aos="fade-left" data-aos-delay="1200">{format(prov.sembuh)}</td>
+                                            {/* <td data-aos="fade-left" data-aos-delay="1200">{format(prov.sembuh)}</td> */}
+                                            <td data-aos="fade-left" data-aos-delay="1200"><CountUp end={prov.sembuh} separator="." delay={1.2} /></td>
                                         </tr>
                                         <tr>
                                             <td data-aos="fade-right" data-aos-delay="1600">Meninggal</td>
-                                            <td data-aos="fade-left" data-aos-delay="1600">{format(prov.meninggal)}</td>
+                                            {/* <td data-aos="fade-left" data-aos-delay="1600">{format(prov.meninggal)}</td> */}
+                                            <td data-aos="fade-left" data-aos-delay="1600"><CountUp end={prov.meninggal} separator="." delay={1.6} /></td>
                                         </tr>
                                     </tbody>
                                 </table>

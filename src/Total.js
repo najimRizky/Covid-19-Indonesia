@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Aos from "aos";
 import "aos/dist/aos.css";
+import CountUp from 'react-countup';
 
 function HomeTotal() {
     const [item, setItem] = useState([]);
@@ -48,7 +49,8 @@ function HomeTotal() {
 
     function tingkatKematian(){
         var tmp = (Number(item.total.meninggal)/Number(item.total.positif)*100).toFixed(2)
-        return tmp.toString() + '%';
+        // return tmp.toString() + '%';
+        return tmp;
     }
 
     return (
@@ -63,7 +65,8 @@ function HomeTotal() {
                         <Grid item xs={9} sm={4} >
                             <Paper className="totalKasus" style={{borderRadius: '18px'}}>
                                 <h2>Jumlah Kasus</h2> 
-                                <h3>{format(item.total.positif)}</h3>
+                                {/* <h3>{format(item.total.positif)}</h3> */}
+                                <h3><CountUp end={item.total.positif} separator="." delay={1.5}/></h3>
                             </Paper>
                             <div className="kasusBaru">
                                 {currDate === item.penambahan.tanggal ? (
@@ -78,7 +81,8 @@ function HomeTotal() {
                     <Grid item xs={9} sm={3} data-aos="flip-left" data-aos-delay="1400">
                         <Paper className="totalSembuh" style={{borderRadius: '18px'}}>
                             <h2>Sembuh</h2>
-                            <h3>{format(item.total.sembuh)}</h3>
+                            {/* <h3>{format(item.total.sembuh)}</h3>z */}
+                            <h3><CountUp end={item.total.sembuh} separator="." delay={1.6}/></h3>
                         </Paper>
                         <div className="sembuhBaru">
                             {currDate === item.penambahan.tanggal ? (
@@ -92,7 +96,8 @@ function HomeTotal() {
                     <Grid item xs={9} sm={3}  data-aos="flip-left" data-aos-delay="1600">
                         <Paper className="totalMeninggal" style={{borderRadius: '18px'}}>
                             <h2>Meninggal</h2>
-                            <h3>{format(item.total.meninggal)}</h3>
+                            {/* <h3>{format(item.total.meninggal)}</h3> */}
+                            <h3><CountUp end={item.total.meninggal} separator="." delay={1.7}/></h3>
                         </Paper>
                         <div className="meninggalBaru">
                             {currDate === item.penambahan.tanggal ? (
@@ -105,7 +110,7 @@ function HomeTotal() {
                     </Grid>
                     <Grid item xs={9} sm={9} data-aos="fade-left" >
                         <h4 style={{color: 'black', fontWeight: 'normal', marginBottom: '-19px'}}>Tingkat Kematian</h4>
-                        <h1 style={{color: 'red', fontWeight: 'lighter'}}>{tingkatKematian()}</h1>
+                        <h1 style={{color: 'red', fontWeight: 'lighter'}}>{tingkatKematian()}%</h1>
                     </Grid>
                 </Grid>
             </>

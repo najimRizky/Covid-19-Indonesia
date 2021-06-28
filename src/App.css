@@ -1,13 +1,13 @@
 .App {
   text-align: center;
   font-family: 'Roboto', sans-serif;
-  position: relative;
+  /* position: relative; */
   min-height: 100vh;
 }
 
 .footer{
   margin-top: auto;
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
 }
 
@@ -78,7 +78,7 @@
 }
 
 .totalSembuh{
-  background-image: linear-gradient(45deg,#51c2d5,#51c2d5);
+  background-image: linear-gradient(45deg,#49adbe,#51c2d5);
   margin: 0 10px;
   transform: scale(0);
   animation: masuk forwards;
