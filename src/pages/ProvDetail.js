@@ -14,7 +14,9 @@ function ProvDetail({ match }) {
 
 
     useEffect(() => {
-        fetchItems();
+        setTimeout(() => {
+            fetchItems();
+        }, 1000);
         showProv();
         Aos.init({ duration: 1000, once: true });
         // eslint-disable-next-line
@@ -59,7 +61,7 @@ function ProvDetail({ match }) {
     }
 
     return (
-        <div>
+        <div style={{minHeight: "500px"}}>
             {prov !== undefined ? (
                 <Grid container justify="center" >
                     <Grid item xs={12} data-aos="fade-down" >
@@ -122,7 +124,7 @@ function ProvDetail({ match }) {
                     {fetchStatus === false ? (
                         <>
                             <CircularProgress className="margin-top-20" />
-                            <h2>Terdapat error pada pengambilan data, harap kembali lagi nanti</h2>
+                            <h2>Harap tunggu</h2>
                         </>
                     ) : (
                         <CircularProgress className="margin-top-20" />

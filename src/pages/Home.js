@@ -6,7 +6,7 @@ import Grafik from "../components/Grafik"
 function Home() {
     
     return (
-        <div>
+        <div style={{minHeight: "500px"}}>
             <Total/>
             <hr style={{marginTop: 20, marginBottom: 20}}></hr>
             <Grafik/>

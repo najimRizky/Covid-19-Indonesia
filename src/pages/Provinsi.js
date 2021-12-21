@@ -20,7 +20,9 @@ function Provinsi() {
     const [fetchStatus, setFetchStatus] = useState(false);
 
     useEffect(() => {
-        fetchItems();
+        setTimeout(() => {
+            fetchItems();
+        }, 1000);
         // eslint-disable-next-line
     },[])
 
@@ -137,7 +139,9 @@ function Provinsi() {
                 </Grid>
             </Grid>
             ) : (
-                <CircularProgress className="margin-top-20" />
+                <div style={{minHeight: "500px"}} >
+                    <CircularProgress className="margin-top-20" />
+                </div>
             )
                 
         }

@@ -2,7 +2,7 @@
   text-align: center;
   font-family: 'Roboto', sans-serif;
   /* position: relative; */
-  min-height: 100vh;
+  min-height: 100vh !important;
 }
 
 .footer{

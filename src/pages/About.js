@@ -6,7 +6,7 @@ import Github from '@material-ui/icons/GitHub';
 
 function About() {
     return (
-        <div>
+        <div style={{minHeight: "500px"}}>
             <h3>Api Source</h3>
             <p>https://apicovid19indonesia-v2.vercel.app/api</p>
             <br></br>
