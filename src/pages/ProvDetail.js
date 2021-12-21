@@ -16,8 +16,8 @@ function ProvDetail({ match }) {
     useEffect(() => {
         setTimeout(() => {
             fetchItems();
-        }, 1000);
-        showProv();
+            showProv();
+        }, 500);
         Aos.init({ duration: 1000, once: true });
         // eslint-disable-next-line
     }, [fetchStatus])
@@ -124,7 +124,6 @@ function ProvDetail({ match }) {
                     {fetchStatus === false ? (
                         <>
                             <CircularProgress className="margin-top-20" />
-                            <h2>Harap tunggu</h2>
                         </>
                     ) : (
                         <CircularProgress className="margin-top-20" />
