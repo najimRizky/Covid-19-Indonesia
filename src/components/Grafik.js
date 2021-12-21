@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import './App.css';
+import '../App.css';
 import Grid from '@material-ui/core/Grid';
 import { Bar, Line } from 'react-chartjs-2';
 import Aos from "aos";
 import CircularProgress from '@material-ui/core/CircularProgress';
-import "aos/dist/aos.css";
+// import "aos/dist/aos.css";
 
 function Grafik() {
     const [item, setItem] = useState([]);

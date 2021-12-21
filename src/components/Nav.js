@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css';
+import '../App.css';
 import {Link} from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -91,21 +91,3 @@ function Nav() {
 }
 
 export default Nav;
-
-/* 
-<ul>
-                    <Link to="/" style={navstyle}>
-                        <li>Home</li>
-                    </Link>
-                    <Link style={navstyle} to="/provinsi">
-                        <li>Data Per provinsi</li>
-                    </Link>
-                    <Link style={navstyle} to="/about">
-                        <li>About</li>
-                    </Link>
-                </ul>
-
-                <IconButton >
-                        <MenuIcon className="menuIcon" />
-                    </IconButton>
-*/

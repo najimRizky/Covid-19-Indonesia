@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css';
+import '../App.css';
 import Linkedin from '@material-ui/icons/LinkedIn';
 import Github from '@material-ui/icons/GitHub';
 

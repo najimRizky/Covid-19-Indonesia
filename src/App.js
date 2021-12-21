@@ -1,11 +1,11 @@
 import React from 'react'
 import './App.css';
-import Nav from './Nav'
-import Footer from './Footer'
-import About from './About'
-import Provinsi from './Provinsi'
-import ProvDetail from './ProvDetail'
-import Home from './Home'
+import Nav from './components/Nav'
+import Footer from './components/Footer'
+import About from './pages/About'
+import Provinsi from './pages/Provinsi'
+import ProvDetail from './pages/ProvDetail'
+import Home from './pages/Home'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 function App() {

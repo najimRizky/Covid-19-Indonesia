@@ -1,7 +1,7 @@
 import React from 'react'
-import Total from './Total'
-import Provinsi from './ProvinsiHome'
-import Grafik from './Grafik'
+import Total from "../components/Total"
+import Provinsi from '../components/ProvinsiHome'
+import Grafik from "../components/Grafik"
 
 function Home() {
     
@@ -12,7 +12,6 @@ function Home() {
             <Grafik/>
             <hr style={{marginTop: 20, marginBottom: 20}}></hr>
             <Provinsi/>
-
         </div>
     );
 }

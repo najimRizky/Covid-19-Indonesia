@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import {Link} from 'react-router-dom'
 import Aos from "aos";
 import "aos/dist/aos.css";
-import './App.css';
+import '../App.css';
 import CountUp from 'react-countup';
 
 
